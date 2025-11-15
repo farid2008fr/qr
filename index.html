@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text QR Code Generator</h1>
+        <p class="subtitle">Create static QR codes with plain text messages</p>
+        
+        <div class="generator-section">
+            <div class="input-group">
+                <label for="textInput">Enter Text (Max 300 characters)</label>
+                <textarea id="textInput" placeholder="Type your text here..." maxlength="300"></textarea>
+                <span id="charCount">0/300</span>
+            </div>
+            
+            <div class="customization-group">
+                <label>Customization Options</label>
+                <div class="color-inputs">
+                    <label>
+                        Foreground Color:
+                        <input type="color" id="fgColor" value="#000000">
+                    </label>
+                    <label>
+                        Background Color:
+                        <input type="color" id="bgColor" value="#FFFFFF">
+                    </label>
+                </div>
+                <label>
+                    Logo URL (optional):
+                    <input type="text" id="logoUrl" placeholder="https://example.com/logo.png">
+                </label>
+            </div>
+            
+            <button id="generateBtn" class="btn-primary">Generate QR Code</button>
+        </div>
+        
+        <div class="preview-section">
+            <h2>Preview</h2>
+            <div id="qrPreview" class="qr-preview">
+                <p class="placeholder">Your QR code will appear here</p>
+            </div>
+            
+            <div class="export-options" id="exportOptions" style="display: none;">
+                <button class="btn-export" onclick="exportQR('png')">Download PNG</button>
+                <button class="btn-export" onclick="exportQR('jpg')">Download JPG</button>
+                <button class="btn-export" onclick="exportQR('svg')">Download SVG</button>
+                <button class="btn-export" onclick="exportQR('eps')">Download EPS</button>
+            </div>
+        </div>
+        
+        <div class="use-cases">
+            <h2>Use Cases</h2>
+            <div class="case-grid">
+                <div class="case-card">
+                    <h3>Consumer Electronics</h3>
+                    <p>Store manufacturing details on product packaging</p>
+                </div>
+                <div class="case-card">
+                    <h3>Home Repairs</h3>
+                    <p>Provide repair protocols on household items</p>
+                </div>
+                <div class="case-card">
+                    <h3>Gaming Industry</h3>
+                    <p>Include unlock codes on game disc covers</p>
+                </div>
+                <div class="case-card">
+                    <h3>Education</h3>
+                    <p>Make quizzes interactive with answer reveals</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tips">
+            <h2>Important Tips</h2>
+            <ul>
+                <li>Accuracy is critical - content cannot be edited after generation</li>
+                <li>Always perform test scans before mass printing</li>
+                <li>Minimum size: 2x2 cm (0.8x0.8 inches) for scannability</li>
+                <li>Maintain high contrast between foreground and background colors</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
